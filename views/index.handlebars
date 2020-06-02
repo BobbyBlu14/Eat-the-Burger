@@ -3,9 +3,9 @@
 <h2>1. Make a Burger 2. Eat the Burger</h2>
 
 <ul>
-  {{#each eaburger}}
+  {{#each cat}}
     {{#unless eaten}}
-      {{> eaburger/cat-block eat=true}}
+      {{> eaburger/cat-block eaten=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -13,9 +13,9 @@
 <h2>Burgers Ready to be eaten!</h2>
 
 <ul>
-  {{#each eaburger}}
+  {{#each cat}}
     {{#if eaten}}
-      {{> eaburger/cat-block eat=false}}
+      {{> eaburger/cat-block eaten=false}}
     {{/if}}
   {{/each}}
 </ul>

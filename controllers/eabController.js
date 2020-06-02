@@ -7,16 +7,17 @@ var burger = require("../models/burgers.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  // burger.all(function(data) {
-  //   var hbsObject = {
-  //     burger: data
-  //   };
-  //   console.log('hello');
-  //   console.log(data);
-  //   res.render("index");
+  burger.all(function(data) {
+    var hbsObject = {
+      burger: data
+    };
+    console.log(hbsObject);
+    console.log(data);
+    res.render("index", hbsObject);
   // });
-  res.render("index")
+  // res.render("index")
 });
+})
 
 router.post("/api/burgers", function(req, res) {
   burger.create([
@@ -60,4 +61,5 @@ router.delete("/api/burgers/:id", function(req, res) {
 });
 
 // Export routes for server.js to use.
+
 module.exports = router;
